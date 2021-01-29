@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SwensonHE.Store.DTO;
+using SwensonHE.Store.Ground.Enums;
 using SwensonHE.Store.Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace SwensonHE.Store.API.Controllers
 {
 
     [Route("")]
-    [Route("[controller]")]
+    [ApiController]
     public class PodController : BaseController
     {
         private readonly Lazy<IItemSKUServices> _itemSKUServices;
@@ -23,14 +24,14 @@ namespace SwensonHE.Store.API.Controllers
         private IItemSKUServices ItemSKUServices => _itemSKUServices.Value;
 
         [HttpPost]
-        [Route("GetCoffeeMachine")]
-        public async  Task<IActionResult> GetItemMachines([FromBody] ItemSKUDTORequest itemSKUDTORequest)
+        [Route("pods/GetItemPods")]
+        public async Task<IActionResult> GetItemPods([FromBody] ItemSKUDTORequest itemSKUDTORequest)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
+            itemSKUDTORequest.SetProductType(ProductTypeEnum.Pods);
             var result = await ItemSKUServices.GetSKUList(itemSKUDTORequest);
             if (!result.IsValid)
             {

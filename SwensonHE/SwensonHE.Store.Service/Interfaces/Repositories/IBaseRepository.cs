@@ -10,7 +10,6 @@ namespace SwensonHE.Store.Service.Interfaces
     { 
         Task<T> FindById(Expression<Func<T, bool>> predicate);
         Task<IQueryable<T>> FindAll();
-      
         Task<IQueryable<T>> Where(Expression<Func<T, bool>> predicate);
     }
 }
