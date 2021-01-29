@@ -20,6 +20,14 @@ namespace SwensonHE.Store.Service.Implementation
 
         private IItemSKUValidator ItemSKUValidator => _itemSKUValidator.Value;
 
+        /// <summary>
+        /// Validate SKU Item List
+        /// </summary>
+        /// <param name="flavorType"></param>
+        /// <param name="productType"></param>
+        /// <param name="itemSize"></param>
+        /// <param name="modeltype"></param>
+        /// <returns></returns>
         public async Task<ValidatorResult> GetSKUListValidator(FlavorTypeEnum? flavorType, ProductTypeEnum? productType
             , ItemSizeEnum? itemSize, ModeltypeEnum? modeltype)
         {

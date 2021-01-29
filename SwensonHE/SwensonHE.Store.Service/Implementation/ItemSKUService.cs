@@ -22,6 +22,12 @@ namespace SwensonHE.Store.Service.Implementation
 
         private IItemSKUServiceValidator ItemSKUServiceValidator => _itemSKUServiceValidator.Value;
         private IItemSKURepository ItemSKURepository => _itemSKURepository.Value;
+
+        /// <summary>
+        /// GetSKUList Methos to Validate the object request the starting to retrive the KSU items from the repository
+        /// </summary>
+        /// <param name="itemSKUDTORequest"></param>
+        /// <returns></returns>
         public async Task<ServiceResultList<ItemSKUDTOResponse>> GetSKUList(ItemSKUDTORequest itemSKUDTORequest)
         {
             ValidatorResult validationResult;
