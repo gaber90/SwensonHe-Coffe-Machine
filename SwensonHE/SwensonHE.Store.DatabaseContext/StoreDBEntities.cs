@@ -34,6 +34,9 @@ namespace SwensonHE.Store.DatabaseContext
             modelBuilder.Entity<ItemSize>().HasMany(i => i.itemSKUs).WithOne(i => i.ItemSize);
             modelBuilder.Entity<ProductType>().HasMany(t => t.products).WithOne(i => i.ProductType);
             modelBuilder.Entity<ItemSKU>().HasIndex(a => a.Code).IsUnique();
+
+            modelBuilder.Entity<Item>().HasMany(p => p.Products).WithOne(p => p.Item);
+
         }
 
         public IDbConnection GetDbContextConnection()

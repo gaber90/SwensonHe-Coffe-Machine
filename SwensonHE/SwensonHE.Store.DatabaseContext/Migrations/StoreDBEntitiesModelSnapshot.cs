@@ -42,7 +42,7 @@ namespace SwensonHE.Store.Presistance.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ItemName")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -108,14 +108,8 @@ namespace SwensonHE.Store.Presistance.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ProductID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SizeID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("itemID")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
@@ -163,10 +157,15 @@ namespace SwensonHE.Store.Presistance.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("ItemID")
+                        .HasColumnType("int");
+
                     b.Property<int?>("ProductTypeID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("ItemID");
 
                     b.HasIndex("ProductTypeID");
 
@@ -214,6 +213,10 @@ namespace SwensonHE.Store.Presistance.Migrations
 
             modelBuilder.Entity("SwensonHE.Store.Data.Entities.Product", b =>
                 {
+                    b.HasOne("SwensonHE.Store.Data.Entities.Item", "Item")
+                        .WithMany("Products")
+                        .HasForeignKey("ItemID");
+
                     b.HasOne("SwensonHE.Store.Data.Entities.ProductType", "ProductType")
                         .WithMany("products")
                         .HasForeignKey("ProductTypeID");

@@ -8,6 +8,8 @@ namespace SwensonHE.Store.Data.Entities
         [Key]
         public int ID { get; set; }
         public virtual ProductType ProductType { get; set; }
+
+        public virtual Item Item { get; set; }
         public  ICollection<ItemSKU> itemSKUs  { get; set; }
     }
 }

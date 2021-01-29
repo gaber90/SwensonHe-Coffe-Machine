@@ -2,7 +2,7 @@
 
 namespace SwensonHE.Store.Presistance.Migrations
 {
-    public partial class Intial : Migration
+    public partial class AddStoreIntialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -25,7 +25,7 @@ namespace SwensonHE.Store.Presistance.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ItemName = table.Column<string>(maxLength: 100, nullable: true)
+                    Name = table.Column<string>(maxLength: 100, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -38,9 +38,7 @@ namespace SwensonHE.Store.Presistance.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    itemID = table.Column<int>(nullable: false),
-                    ProductID = table.Column<int>(nullable: false),
-                    SizeID = table.Column<int>(nullable: false)
+                    Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -93,11 +91,18 @@ namespace SwensonHE.Store.Presistance.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductTypeID = table.Column<int>(nullable: true)
+                    ProductTypeID = table.Column<int>(nullable: true),
+                    ItemID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Product", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Product_Item_ItemID",
+                        column: x => x.ItemID,
+                        principalTable: "Item",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Product_ProductType_ProductTypeID",
                         column: x => x.ProductTypeID,
@@ -189,6 +194,11 @@ namespace SwensonHE.Store.Presistance.Migrations
                 column: "ProductID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Product_ItemID",
+                table: "Product",
+                column: "ItemID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Product_ProductTypeID",
                 table: "Product",
                 column: "ProductTypeID");
@@ -196,9 +206,6 @@ namespace SwensonHE.Store.Presistance.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Item");
-
             migrationBuilder.DropTable(
                 name: "ItemSKU");
 
@@ -216,6 +223,9 @@ namespace SwensonHE.Store.Presistance.Migrations
 
             migrationBuilder.DropTable(
                 name: "Product");
+
+            migrationBuilder.DropTable(
+                name: "Item");
 
             migrationBuilder.DropTable(
                 name: "ProductType");

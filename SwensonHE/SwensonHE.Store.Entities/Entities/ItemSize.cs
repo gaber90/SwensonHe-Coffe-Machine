@@ -8,9 +8,7 @@ namespace SwensonHE.Store.Data.Entities
     {
         [Key]
         public int ID { get; set; }
-        public int itemID { get; set; }
-        public int ProductID { get; set; }
-        public int SizeID { get; set; }
+        public string Name { get; set; }
         public ICollection<ItemSKU> itemSKUs { get; set; }
     }
 }

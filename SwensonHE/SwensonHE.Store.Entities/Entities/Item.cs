@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace SwensonHE.Store.Data.Entities
 {
@@ -8,6 +9,8 @@ namespace SwensonHE.Store.Data.Entities
         public int ID { get; set; }
 
         [StringLength(100)]
-        public string ItemName { get; set; }
+        public string Name { get; set; }
+
+        public ICollection<Product> Products { get; set; }
     }
 }
