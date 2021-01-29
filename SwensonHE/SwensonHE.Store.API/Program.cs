@@ -24,8 +24,8 @@ namespace SwensonHE.Store.API
                 try
                 {
                     var context = scope.ServiceProvider.GetService<IStoreDBEntities>();
-                    context.Database.EnsureDeleted();
-                    context.Database.Migrate();
+                    //context.Database.EnsureDeleted();
+                    //context.Database.Migrate();
                 }
                 catch (Exception)
                 {

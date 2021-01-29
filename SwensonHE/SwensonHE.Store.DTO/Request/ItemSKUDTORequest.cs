@@ -11,6 +11,6 @@ namespace SwensonHE.Store.DTO
 
         public ProductTypeEnum? ProductType { get; set; }
 
-        public int PackSize { get; set; } = 0;
+        public int? PackSize { get; set; }
     }
 }

@@ -11,11 +11,11 @@ namespace SwensonHE.Store.API.Controllers
 
     [Route("")]
     [Route("[controller]")]
-    public class MachineController : BaseController
+    public class PodController : BaseController
     {
         private readonly Lazy<IItemSKUServices> _itemSKUServices;
 
-        public MachineController(Lazy<IItemSKUServices> itemSKUServices)
+        public PodController(Lazy<IItemSKUServices> itemSKUServices)
         {
             _itemSKUServices = itemSKUServices;
         }
@@ -23,7 +23,7 @@ namespace SwensonHE.Store.API.Controllers
         private IItemSKUServices ItemSKUServices => _itemSKUServices.Value;
 
         [HttpPost]
-        [Route("GetItemMachines")]
+        [Route("GetCoffeeMachine")]
         public async  Task<IActionResult> GetItemMachines([FromBody] ItemSKUDTORequest itemSKUDTORequest)
         {
             if (!ModelState.IsValid)
