@@ -10,8 +10,8 @@ using SwensonHE.Store.DatabaseContext;
 namespace SwensonHE.Store.Presistance.Migrations
 {
     [DbContext(typeof(StoreDBEntities))]
-    [Migration("20210128100526_IntialMigration")]
-    partial class IntialMigration
+    [Migration("20210128235441_Intial")]
+    partial class Intial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

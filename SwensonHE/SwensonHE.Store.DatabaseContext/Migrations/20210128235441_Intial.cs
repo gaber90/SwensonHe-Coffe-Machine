@@ -2,7 +2,7 @@
 
 namespace SwensonHE.Store.Presistance.Migrations
 {
-    public partial class IntialMigration : Migration
+    public partial class Intial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

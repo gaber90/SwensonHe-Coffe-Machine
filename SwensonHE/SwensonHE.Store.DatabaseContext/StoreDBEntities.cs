@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SwensonHE.Store.Data.Entities;
 using SwensonHE.Store.Presistance.Extensions;
+using SwensonHE.Store.Service.Interfaces;
 using System.Data;
 
 namespace SwensonHE.Store.DatabaseContext
 {
-    public class StoreDBEntities : DbContext
+    public class StoreDBEntities : DbContext, IStoreDBEntities
     {
         public StoreDBEntities(DbContextOptions<StoreDBEntities> options)
             : base(options)
@@ -45,5 +46,11 @@ namespace SwensonHE.Store.DatabaseContext
             connection.Open();
             return connection;
         }
+
+        public new DbSet<TEntity> Set<TEntity>() where TEntity : class
+        {
+            return base.Set<TEntity>();
+        }
+        
     }
 }

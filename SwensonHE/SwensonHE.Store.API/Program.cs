@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,31 +15,34 @@ namespace SwensonHE.Store.API
 {
     public class Program
     {
-        public static void Main(string[] args)
-        {
-            var host = CreateHostBuilder(args).Build();
+        public static void Main(string[] args) =>
+           WebHost.CreateDefaultBuilder(args).UseStartup<Startup>().Build().Run();
+        //public static void Main(string[] args)
+        //{
 
-            using (var scope = host.Services.CreateScope())
-            {
-                try
-                {
-                    var context = scope.ServiceProvider.GetService<StoreDBEntities>();
-                    context.Database.EnsureDeleted();
-                    context.Database.Migrate();
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-            }
-            host.Run();
-        }
+        //var host = CreateHostBuilder(args).Build();
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+        ////using (var scope = host.Services.CreateScope())
+        ////{
+        ////    try
+        ////    {
+        ////        var context = scope.ServiceProvider.GetService<StoreDBEntities>();
+        ////        context.Database.EnsureDeleted();
+        ////        context.Database.Migrate();
+        ////    }
+        ////    catch (Exception)
+        ////    {
+        ////        throw;
+        ////    }
+        ////}
+        ///host.Run();
+        //}
+
+        //public static IHostBuilder CreateHostBuilder(string[] args) =>
+        //    Host.CreateDefaultBuilder(args)
+        //        .ConfigureWebHostDefaults(webBuilder =>
+        //        {
+        //            webBuilder.UseStartup<Startup>();
+        //        });
     }
 }

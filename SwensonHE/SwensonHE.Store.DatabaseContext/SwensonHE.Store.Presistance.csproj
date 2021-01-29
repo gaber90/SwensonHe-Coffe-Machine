@@ -5,15 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20210128093031_Initial.cs" />
-    <Compile Remove="Migrations\20210128093031_Initial.Designer.cs" />
-    <Compile Remove="Migrations\20210128093337_Initial.cs" />
-    <Compile Remove="Migrations\20210128093337_Initial.Designer.cs" />
-    <Compile Remove="Migrations\20210128094454_IntialMigration.cs" />
-    <Compile Remove="Migrations\20210128094454_IntialMigration.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.5" />
@@ -22,10 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SwensonHE.Store.Entities\SwensonHE.Store.Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
+    <ProjectReference Include="..\SwensonHE.Store.Service\SwensonHE.Store.Service.csproj" />
   </ItemGroup>
 
 </Project>

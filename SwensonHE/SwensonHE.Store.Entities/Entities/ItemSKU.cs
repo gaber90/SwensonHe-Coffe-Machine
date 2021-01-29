@@ -7,11 +7,6 @@ namespace SwensonHE.Store.Data.Entities
 {
     public class ItemSKU : IEntity
     {
-        public ItemSKU()
-        {
-            HasWaterCompatibality = false;
-        }
-
         [Key]
         public int ID { get; set; }
         public string Code { get; set; }
