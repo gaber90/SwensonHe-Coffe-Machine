@@ -11,11 +11,11 @@ namespace SwensonHE.Store.API.Controllers
 
     [Route("")]
     [Route("[controller]")]
-    public class CoffeeMachineController : BaseController
+    public class MachineController : BaseController
     {
         private readonly Lazy<IItemSKUServices> _itemSKUServices;
 
-        public CoffeeMachineController(Lazy<IItemSKUServices> itemSKUServices)
+        public MachineController(Lazy<IItemSKUServices> itemSKUServices)
         {
             _itemSKUServices = itemSKUServices;
         }
@@ -24,7 +24,7 @@ namespace SwensonHE.Store.API.Controllers
 
         [HttpPost]
         [Route("GetCoffeeMachine")]
-        public async  Task<IActionResult> GetCoffeeMachine([FromBody] ItemSKUDTORequest itemSKUDTORequest)
+        public async  Task<IActionResult> GetItemMachines([FromBody] ItemSKUDTORequest itemSKUDTORequest)
         {
             if (!ModelState.IsValid)
             {
