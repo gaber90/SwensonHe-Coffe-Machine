@@ -6,8 +6,8 @@ namespace SwensonHE.Store.Ground.Enums
 {
     public enum ProductTypeEnum
     {
-        machines = 1,
-        pods = 2
+        Machines = 1,
+        Pods = 2
 
     }
 }
