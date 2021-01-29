@@ -11,7 +11,6 @@
   <ItemGroup>
     <ProjectReference Include="..\SwensonHE.Store.DTO\SwensonHE.Store.DTO.csproj" />
     <ProjectReference Include="..\SwensonHE.Store.Entities\SwensonHE.Store.Data.csproj" />
-    <ProjectReference Include="..\SwensonHE.Store.Ground\SwensonHE.Store.Ground.csproj" />
     <ProjectReference Include="..\SwensonHE.Store.Language\SwensonHE.Store.Language.csproj" />
   </ItemGroup>
 
