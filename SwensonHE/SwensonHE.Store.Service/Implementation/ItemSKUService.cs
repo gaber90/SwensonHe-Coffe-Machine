@@ -36,6 +36,16 @@ namespace SwensonHE.Store.Service.Implementation
                 };
             }
             var skuDate = await ItemSKURepository.GetIetmSKU(itemSKUDTORequest);
+            if (!skuDate.Any())
+            {
+                return new ServiceResultList<ItemSKUDTOResponse>()
+                {
+                    IsValid = false,
+                    Status = validationResult.Status,
+                    Messages = new List<string>() { "Items don't Exist" }
+                };
+            }
+
             var data = skuDate.Select(a => new ItemSKUDTOResponse
             {
                 SKUCode = a.Code

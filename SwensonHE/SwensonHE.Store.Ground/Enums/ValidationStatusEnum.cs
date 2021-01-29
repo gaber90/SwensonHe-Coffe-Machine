@@ -9,6 +9,8 @@ namespace SwensonHE.Store.Ground.Enums
         BadRequest = 400,
         NotFound = 404,
         Unauthorized = 401,
-        Accepted = 202
+        Accepted = 202,
+        OK = 200
+
     }
 }
