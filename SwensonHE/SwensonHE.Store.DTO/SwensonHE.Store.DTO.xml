@@ -4,6 +4,48 @@
         <name>SwensonHE.Store.DTO</name>
     </assembly>
     <members>
+        <member name="T:SwensonHE.Store.DTO.ItemSKUDTORequest">
+            <summary>
+            Item SkU Request
+            </summary>
+        </member>
+        <member name="P:SwensonHE.Store.DTO.ItemSKUDTORequest.HasWaterLine">
+            <summary>
+            HasWaterLine
+            </summary>
+        </member>
+        <member name="P:SwensonHE.Store.DTO.ItemSKUDTORequest.FlavorType">
+            <summary>
+            FlavorType
+            </summary>
+        </member>
+        <member name="P:SwensonHE.Store.DTO.ItemSKUDTORequest.ProductType">
+            <summary>
+            ProductType
+            </summary>
+        </member>
+        <member name="P:SwensonHE.Store.DTO.ItemSKUDTORequest.ItemSize">
+            <summary>
+            ItemSize
+            </summary>
+        </member>
+        <member name="P:SwensonHE.Store.DTO.ItemSKUDTORequest.Modeltype">
+            <summary>
+            Modeltype
+            </summary>
+        </member>
+        <member name="P:SwensonHE.Store.DTO.ItemSKUDTORequest.PackSize">
+            <summary>
+            PackSize
+            </summary>
+        </member>
+        <member name="M:SwensonHE.Store.DTO.ItemSKUDTORequest.SetProductType(SwensonHE.Store.Ground.Enums.ProductTypeEnum)">
+            <summary>
+            Set Type Value
+            </summary>
+            <param name="productType"></param>
+            <returns></returns>
+        </member>
         <member name="T:SwensonHE.Store.DTO.ItemSKUDTOResponse">
             <summary>
             ItemSKUDTOResponse
