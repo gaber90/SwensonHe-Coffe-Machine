@@ -25,7 +25,7 @@ namespace SwensonHE.Store.Service.Implementation
         public async Task<ServiceResultList<ItemSKUDTOResponse>> GetSKUList(ItemSKUDTORequest itemSKUDTORequest)
         {
             ValidatorResult validationResult;
-            validationResult = await ItemSKUServiceValidator.GetSKUListValidator(itemSKUDTORequest.FlavorType, itemSKUDTORequest.ProductType);
+            validationResult = await ItemSKUServiceValidator.GetSKUListValidator(itemSKUDTORequest.FlavorType, itemSKUDTORequest.ProductType, itemSKUDTORequest.ItemSize, itemSKUDTORequest.);
             if (!validationResult.IsValid)
             {
                 return new ServiceResultList<ItemSKUDTOResponse>()

@@ -4,6 +4,10 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Projects\SwensonHE\SwensonHe-Coffe-Machine\SwensonHE\SwensonHE.Store.DTO\SwensonHE.Store.DTO.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\SwensonHE.Store.Ground\SwensonHE.Store.Ground.csproj" />
   </ItemGroup>

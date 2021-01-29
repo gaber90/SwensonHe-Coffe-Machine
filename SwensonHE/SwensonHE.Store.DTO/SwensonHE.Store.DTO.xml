@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SwensonHE.Store.DTO</name>
+    </assembly>
+    <members>
+        <member name="T:SwensonHE.Store.DTO.ItemSKUDTOResponse">
+            <summary>
+            ItemSKUDTOResponse
+            </summary>
+        </member>
+        <member name="P:SwensonHE.Store.DTO.ItemSKUDTOResponse.SKUCode">
+            <summary>
+            SKUCode
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -4,10 +4,19 @@ using SwensonHE.Store.Service.Model;
 
 namespace SwensonHE.Store.API.Controllers
 {
+    /// <summary>
+    /// Base Controller
+    /// </summary>
     [Route("")]
     [ApiController]
     public class BaseController : ControllerBase
     {
+        /// <summary>
+        /// Get Error Result
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <returns></returns>
         protected IActionResult GetErrorResult<T>(IServiceResult<T> result) where T : class
         {
             if (result == null)

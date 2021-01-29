@@ -19,12 +19,16 @@ namespace SwensonHE.Store.Service.Implementation
         }
 
         private IItemSKUValidator ItemSKUValidator => _itemSKUValidator.Value;
-        public async Task<ValidatorResult> GetSKUListValidator(FlavorTypeEnum? flavorType, ProductTypeEnum? productType)
+
+        public async Task<ValidatorResult> GetSKUListValidator(FlavorTypeEnum? flavorType, ProductTypeEnum? productType
+            , ItemSizeEnum? itemSize, ModeltypeEnum? modeltype)
         {
             var tasks = new List<Task<ValidatorResult>>()
             {
                 ItemSKUValidator.ValidateFlavorType(flavorType),
-                ItemSKUValidator.ValidateProductType(productType)
+                ItemSKUValidator.ValidateProductType(productType),
+                ItemSKUValidator.ValidateModelType(modeltype),
+                ItemSKUValidator.ValidateItemSize(itemSize),
             };
             await Task.WhenAll(tasks);
             var result = tasks.Select(a => a.Result).FirstOrDefault(a => !a.IsValid);

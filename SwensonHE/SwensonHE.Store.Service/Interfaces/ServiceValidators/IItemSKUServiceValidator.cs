@@ -7,6 +7,7 @@ namespace SwensonHE.Store.Service.Interfaces
 {
     public interface IItemSKUServiceValidator
     {
-        Task<ValidatorResult> GetSKUListValidator(FlavorTypeEnum? flavorType, ProductTypeEnum? productType);
+        Task<ValidatorResult> GetSKUListValidator(FlavorTypeEnum? flavorType, ProductTypeEnum? productType
+            , ItemSizeEnum? itemSize, ModeltypeEnum? modeltype);
     }
 }

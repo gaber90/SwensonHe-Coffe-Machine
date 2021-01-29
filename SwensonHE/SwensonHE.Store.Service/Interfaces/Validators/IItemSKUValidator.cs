@@ -12,5 +12,9 @@ namespace SwensonHE.Store.Service.Interfaces
         Task<ValidatorResult> ValidateProductType(ProductTypeEnum? productType);
 
         Task<ValidatorResult> ValidateFlavorType(FlavorTypeEnum? flavorType);
+
+        Task<ValidatorResult> ValidateItemSize(ItemSizeEnum? itemSizeEnum);
+
+        Task<ValidatorResult> ValidateModelType(ModeltypeEnum? modeltypeEnum);
     }
 }

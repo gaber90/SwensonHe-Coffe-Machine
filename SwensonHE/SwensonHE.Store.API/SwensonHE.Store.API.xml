@@ -4,5 +4,66 @@
         <name>SwensonHE.Store.API</name>
     </assembly>
     <members>
+        <member name="T:SwensonHE.Store.API.Controllers.BaseController">
+            <summary>
+            Base Controller
+            </summary>
+        </member>
+        <member name="M:SwensonHE.Store.API.Controllers.BaseController.GetErrorResult``1(SwensonHE.Store.Service.Model.IServiceResult{``0})">
+            <summary>
+            Get Error Result
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SwensonHE.Store.API.Controllers.MachineController">
+            <summary>
+            All SKU Item Machines Either Coffee or Espresso
+            </summary>
+        </member>
+        <member name="M:SwensonHE.Store.API.Controllers.MachineController.#ctor(System.Lazy{SwensonHE.Store.Service.Interfaces.IItemSKUServices})">
+            <summary>
+            Constractor
+            </summary>
+            <param name="itemSKUServices"></param>
+        </member>
+        <member name="M:SwensonHE.Store.API.Controllers.MachineController.GetItemMachines(SwensonHE.Store.DTO.ItemSKUDTORequest)">
+            <summary>
+            Get Item SKU Machine
+            </summary>
+            <remarks>
+            Used to Get Item Machine Skue and you can filter with:
+            1- Water Comptapility
+            2- Size
+            3- Pack size
+            </remarks>
+            <param name="itemSKUDTORequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SwensonHE.Store.API.Controllers.PodController">
+            <summary>
+            All SKU Item Pods Either Coffee or Espresso
+            </summary>
+        </member>
+        <member name="M:SwensonHE.Store.API.Controllers.PodController.#ctor(System.Lazy{SwensonHE.Store.Service.Interfaces.IItemSKUServices})">
+            <summary>
+            Constractor
+            </summary>
+            <param name="itemSKUServices"></param>
+        </member>
+        <member name="M:SwensonHE.Store.API.Controllers.PodController.GetItemPods(SwensonHE.Store.DTO.ItemSKUDTORequest)">
+            <summary>
+            Get Item SKU Pods
+            </summary>
+            <remarks>
+            Used to Get Item Pods Skue and you can filter with:
+            1- Water Comptapility
+            2- Size
+            3- Pack size
+            </remarks>
+            <param name="itemSKUDTORequest"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
